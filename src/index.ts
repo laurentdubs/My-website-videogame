@@ -13,14 +13,14 @@ nunjucks.configure("views", {
 app.set("view engine", "njk");
 
 app.get("/", (req, response) => {
-  request("http://videogame-api.fly.dev/games", (error, body) => {
+  request("http://videogame-api.fly.dev/platforms", (error, body) => {
     if (error) {
       throw error;
     }
 
-    const game = JSON.parse(body);
-    console.log(game);
-    response.render("home", { gameName: game.games });
+    const platform = JSON.parse(body);
+    console.log(platform);
+    response.render("home", { platformName: platform.platforms });
   });
 });
 
