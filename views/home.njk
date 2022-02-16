@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}}
+
+{% block content %}
+  <h1>Welcome to my homepage</h1>
+
+  {%for game in gameName%}
+  <li> {{game.name}}</li>
+  {%else%}
+  <li>This would display if the 'item' collection were empty </li>
+  {%endfor%}
+  
+{% endblock %}
+
+
+
+
