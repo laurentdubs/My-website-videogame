@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% for game in gameName %}
+{% for game in gameGenres %}
   <li><a href="/games/{{game.id}}">{{game.name}}</a></li>
   {%else%}
   <li>This would display if the 'item' collection were empty </li>

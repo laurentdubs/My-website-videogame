@@ -29,6 +29,7 @@ app.get("/platforms", (req, response) => {
 
 app.get("/platforms/:id", (req, response) => {
   const idParameters = req.params.id;
+  console.log(idParameters);
 
   request(`http://videogame-api.fly.dev/games/platforms/${idParameters}`, (error, body) => {
     if (error) {
@@ -42,18 +43,18 @@ app.get("/platforms/:id", (req, response) => {
   });
 });
 
-// app.get("/games/:slug", (req, response) => {
-//   const slug = req.params.slug;
-//   request(`http://videogame-api.fly.dev/games/slug/${slug}`, (error, body) => {
-//     if (error) {
-//       throw error;
-//     }
+app.get("/games/:slug", (req, response) => {
+  const slug = req.params.slug;
+  request(`http://videogame-api.fly.dev/games/slug/${slug}`, (error, body) => {
+    if (error) {
+      throw error;
+    }
 
-//     const game = JSON.parse(body);
-//     console.log(game);
-//     response.render("game", { game, gameGenres: game.games.genres });
-//   });
-// });
+    const game = JSON.parse(body);
+    console.log(game);
+    response.render("game", { game, gameGenres: game.games.genres });
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server started on http://localhost:3000");
