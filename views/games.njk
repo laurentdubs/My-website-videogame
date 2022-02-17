@@ -1,0 +1,11 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+{% for game in gameName %}
+  <li><a href="/games/{{game.id}}">{{game.name}}</a></li>
+  {%else%}
+  <li>This would display if the 'item' collection were empty </li>
+  {%endfor%} 
+
+{% endblock %}

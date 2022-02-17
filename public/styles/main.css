@@ -1,0 +1,107 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* general */
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+.separartor {
+    margin: auto;
+    height: 10px;
+    width: 100px;
+    background: #111;
+}
+
+/* .btn {
+    display:inline-block;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 700px;
+    font-size: 14px; 
+
+}
+
+.btn-primary {
+    background:#111;
+    color:white;
+} */
+
+/* header */
+.header {
+    background: #333;
+    overflow: auto;
+    line-height: 1.7em;
+}
+
+.header nav h1 {
+    float: left;
+    padding: 20px;
+    margin-bottom: 0
+}
+
+.header nav h1 a {
+    color: white;
+}
+
+.header nav ul {
+    float: right;
+    list-style: none;
+}
+
+.header nav ul li {
+    float: left;
+}
+
+.header nav ul li a {
+    color: white;
+    padding: 20px;
+    display: block;
+}
+
+.header nav ul li a:hover {
+    background: #444;
+}
+
+/* vp */
+/* .vp {
+    height: 500px; 
+    background: url(../images/video_games.jpeg); 
+    background-size: cover; 
+    text-align: center;
+    background-position: center
+} */
+
+.vp-content {
+    max-width: 500px;
+    padding-top: 170px;
+    color: black;
+    display: block;
+    margin: auto;
+}
+.vp-content h1 {
+    font-size: 6Opx;
+}
+
+.vp-content p {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1,9em;
+    font-weight: 700px;
+}
+

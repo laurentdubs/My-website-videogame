@@ -1,14 +1,11 @@
-{% extends "layout.njk" %}}
+{% extends "layout.njk" %}
 
 {% block content %}
-  <h1>Welcome to my video game website</h1>
 
-  {%for platform in platformName%}
-  <li> {{platform.name}}</li>
-  {%else%}
-  <li>This would display if the 'item' collection were empty </li>
-  {%endfor%}
+  <a href = "/platforms">Platforms</a>
+  <a href = "/games">Games</a>
   
+
 {% endblock %}
 
 
