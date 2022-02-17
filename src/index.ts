@@ -15,6 +15,18 @@ app.get("/", (req, response) => {
   response.render("home");
 });
 
+app.get("/games", (req, response) => {
+  request("http://videogame-api.fly.dev/games", (error, body) => {
+    if (error) {
+      throw error;
+    } else {
+      const allGames = JSON.parse(body).games;
+      console.log(allGames);
+      response.render("games", { allGames });
+    }
+  });
+});
+
 app.get("/platforms", (req, response) => {
   request("http://videogame-api.fly.dev/platforms", (error, body) => {
     if (error) {
@@ -43,16 +55,16 @@ app.get("/platforms/:id", (req, response) => {
   });
 });
 
-app.get("/games/:slug", (req, response) => {
-  const slug = req.params.slug;
-  request(`http://videogame-api.fly.dev/games/slug/${slug}`, (error, body) => {
+app.get("/platforms/:id/:slug", (req, response) => {
+  const slugParameters = req.params.slug;
+  request(`http://videogame-api.fly.dev/games/${slugParameters}`, (error, body) => {
     if (error) {
       throw error;
     }
 
-    const game = JSON.parse(body);
-    console.log(game);
-    response.render("game", { game, gameGenres: game.games.genres });
+    const oneGame = JSON.parse(body);
+    console.log(oneGame);
+    response.render("oneGame", { featureGame: oneGame.screenshots, parameterValue: slugParameters });
   });
 });
 

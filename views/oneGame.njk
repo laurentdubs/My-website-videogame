@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<h1>Game Features</h1>
+
+  {%for oneGame in featuregame %}
+  <li>
+  <img class="image" href= "{{game.url}}"src="{{game.url}}"/>
+  </li>
+   {%else%}
+  <li>This would display if the 'item' collection were empty</li>
+  {% endfor %}
+
+
+{% endblock %}
