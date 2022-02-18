@@ -4,10 +4,11 @@
 
    <h1>All video games from one platform</h1> 
  
-   {%for game in gameName%}
-  <li><a href="/platforms/{{platform.id}}/{{game.name}}">{{game.name}}</a></li>
-  {%else%}
+   {% for game in gameName %}
+      <img class="image" href= "/{{game.cover.url}}" src="{{game.cover.url}}" alt="{{game.name}}"/>
+      <a href="features/{{game.id}}">{{game.name}}</a></li> 
+  {% else %}
   <li>This would display if the 'item' collection were empty </li>
-  {%endfor%} 
+  {% endfor %} 
 
 {% endblock %}

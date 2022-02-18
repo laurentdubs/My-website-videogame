@@ -4,12 +4,13 @@
 
    <h1>All video games platforms</h1> 
      
-    <p>Choose your video game plateform :</p> 
+    <p>Choose your video game platform :</p> 
  
    {%for platform in platformName%}
-  <li><a href="/platforms/{{platform.id}}">{{platform.name}}</a></li>
+      <a href = "/{{platform.logo.url}}"><img class="image" src="{{platform.logo.url}}" alt="{{platform.name}}"/></a>
+      <a href="/platforms/{{platform.id}}">{{platform.name}}</a>
   {%else%}
-  <li>This would display if the 'item' collection were empty </li>
+    <li>This would display if the 'item' collection were empty </li>
   {%endfor%} 
 
 {% endblock %}
