@@ -55,17 +55,17 @@ app.get("/platforms/:id", (req, response) => {
   });
 });
 
-app.get("features/:id", (req, response) => {
-  const idParameters = req.params.id;
+app.get("/platforms/features/:slug", (req, response) => {
+  const slugParameters = req.params.slug;
 
-  request(`http://videogame-api.fly.dev/games/${idParameters}`, (error, body) => {
+  request(`http://videogame-api.fly.dev/games/${slugParameters}`, (error, body) => {
     if (error) {
       throw error;
     }
 
     const data = JSON.parse(body);
     console.log(data);
-    response.render("oneGame", { featureGame: data.screenshots, parameterValue: idParameters });
+    response.render("oneGame", { featureGame: data.screenshots, parameterValue: slugParameters });
   });
 });
 

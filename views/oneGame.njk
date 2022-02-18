@@ -4,13 +4,9 @@
 
 <h1>Game Features</h1>
 
-  {%for data in featureGame %}
-    <li>
-      <img class="image"href="{{game.url}}"src="{{game.url}}"/>
-    </li>
-  {%else%}
-    <li>This would display if the 'item' collection were empty</li>
-  {% endfor %} #}
-
+    <li>{{game.name}}</li>
+    <li>{{game.category}}</li>
+    <li>{{game.cover}}</li>
+    <li><img class="image" href="{{game.url}}" src="{{game.url}}"/></li>
 
 {% endblock %}

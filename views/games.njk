@@ -8,7 +8,7 @@
  
    {% for game in allGames %}
     <img class="image" href= "/{{game.cover.url}}" src="{{game.cover.url}}" alt="{{game.name}}"/>
-    <a href="/features/:id">{{ game.name }}</a>
+    <a href="/features/{{game.slug}}">{{ game.slug }}</a>
   {%else%}
     <li>This would display if the 'item' collection were empty </li>
   {%endfor%} 
