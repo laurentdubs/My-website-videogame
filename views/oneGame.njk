@@ -4,9 +4,10 @@
 
 <h1>Game Features</h1>
 
-    <li>{{game.name}}</li>
-    <li>{{game.category}}</li>
-    <li>{{game.cover}}</li>
-    <li><img class="image" href="{{game.url}}" src="{{game.url}}"/></li>
+{% for game in detailsGame %} 
+
+    <img class="image" href="{{game.url}}" src="{{game.url}}"/>
+
+{% endfor %}
 
 {% endblock %}

@@ -6,11 +6,11 @@
      
     <p>Choose your video game platform :</p> 
  
-   {%for platform in platformName%}
+   {% for platform in platformName %}
       <a href = "/{{platform.logo.url}}"><img class="image" src="{{platform.logo.url}}" alt="{{platform.name}}"/></a>
       <a href="/platforms/{{platform.id}}">{{platform.name}}</a>
-  {%else%}
+  {% else %}
     <li>This would display if the 'item' collection were empty </li>
-  {%endfor%} 
+  {% endfor %} 
 
 {% endblock %}
