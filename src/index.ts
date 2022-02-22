@@ -1,6 +1,6 @@
 import express from "express";
 import nunjucks from "nunjucks";
-import request from "@fewlines-education/request";
+import fetch from "node-fetch";
 
 const app = express();
 app.use(express.static("public"));
@@ -16,27 +16,24 @@ app.get("/", (req, response) => {
 });
 
 app.get("/games", (req, response) => {
-  request("http://videogame-api.fly.dev/games", (error, body) => {
-    if (error) {
-      throw error;
-    } else {
-      const allGames = JSON.parse(body).games;
-      console.log(allGames);
-      response.render("games", { allGames });
-    }
-  });
+  fetch("http://videogame-api.fly.dev/games")
+    .then((response) => response.json())
+    .then((allGames) => response.render("games", { allGames }));
+  //   .catch((error) => {
+  //     console.error(error);
+  //  });
 });
+// const allGames = JSON.parse(body).games;
+// console.log(allGames);
+// response.render("games", { allGames });
 
 app.get("/platforms", (req, response) => {
-  request("http://videogame-api.fly.dev/platforms/", (error, body) => {
-    if (error) {
-      throw error;
-    }
-
-    const platform = JSON.parse(body);
-    console.log(platform);
-    response.render("platforms", { platformName: platform.platforms });
-  });
+  fetch("http://videogame-api.fly.dev/platforms/")
+    .then((response) => response.json())
+    .then((platform) => response.render("platforms", { platformName: platform.platforms }));
+  // const platform = JSON.parse(body);
+  // console.log(platform);
+  // response.render("platforms", { platformName: platform.platforms });
 });
 
 app.get("/platforms/:id", (req, response) => {

@@ -8,6 +8,7 @@
 /* general */
 body {
     font-family: "Open Sans", sans-serif;
+    background-color:rgb(219, 242, 245);
 }
 
 h1,
@@ -79,13 +80,13 @@ a {
 }
 
 /* vp */
-/* .vp {
+ /* .vp {
     height: 500px; 
     background: url(../images/video_games.jpeg); 
     background-size: cover; 
     text-align: center;
     background-position: center
-} */
+}  */
 
 .vp-content {
     max-width: 500px;
